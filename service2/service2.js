@@ -10,7 +10,7 @@ function get_uptime() {
     const freespace_in_kb = parseInt(execSync('df / | tail -1 | awk \'{print $4}\'').toString());
     const freespace_in_mb = freespace_in_kb / 1024;
     const time = new Date().toISOString().replace('T', ' ').replace('Z', '');
-    return `Service2 : Uptime: ${uptime_h} hours, Free Memory: ${freespace_in_mb} MB, Time: ${time}`;
+    return `Timestamp2 : Uptime: ${uptime_h} hours, Free Memory: ${freespace_in_mb} MB, Time: ${time}`;
 }
 app.get('/status', async (req, res) => {
     const data = get_uptime();
@@ -18,9 +18,9 @@ app.get('/status', async (req, res) => {
         await axios.post('http://storage:8003/log', data, { 
             headers: {'Content-Type': 'text/plain'} 
         });
-    }  catch (error) {
+        console.log('Successfully sent data to storage service');
+    } catch (error) {
         console.error('Error sending data to storage service:', error.message);
-        res.status(500).send('Error sending data to storage service');
     } 
 
     try {
@@ -30,13 +30,11 @@ app.get('/status', async (req, res) => {
             fs.mkdirSync(logDir, { recursive: true });
         }
         fs.appendFileSync('/vstorage/log.txt', data + '\n\n');
-
-    }
-    catch (error) {
+    } catch (error) {
         console.error('Error writing to local log file:', error.message);
-        res.status(500).send('Error writing to local log file' + error.message);
     }
-     res.set('Content-Type', 'text/plain');
+    
+    res.set('Content-Type', 'text/plain');
     res.send(data);
 });
 

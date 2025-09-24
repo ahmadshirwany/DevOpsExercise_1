@@ -1,0 +1,12 @@
+{
+  "name": "service2",
+  "version": "1.0.0",
+  "main": "service2.js",
+  "scripts": {
+    "start": "node service2.js"
+  },
+  "dependencies": {
+    "express": "^4.18.3",
+    "axios": "^1.6.8"
+  }
+}

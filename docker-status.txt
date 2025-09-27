@@ -1,0 +1,11 @@
+CONTAINER ID   IMAGE                       COMMAND                  CREATED          STATUS          PORTS                                         NAMES
+a0288a9a84ca   devopsexercise_1_service1   "uvicorn service1:ap…"   56 seconds ago   Up 55 seconds   0.0.0.0:8199->8199/tcp, [::]:8199->8199/tcp   devopsexercise_1_service1_1
+b67ba86dface   devopsexercise_1_service2   "docker-entrypoint.s…"   56 seconds ago   Up 55 seconds   8002/tcp                                      devopsexercise_1_service2_1
+435b283dd8da   devopsexercise_1_storage    "python storage.py"      56 seconds ago   Up 56 seconds   8003/tcp                                      devopsexercise_1_storage_1
+
+
+NETWORK ID     NAME                       DRIVER    SCOPE
+016af66d8bd5   bridge                     bridge    local
+0aa404484316   devopsexercise_1_default   bridge    local
+0c3e7257c56c   host                       host      local
+ad366dce2217   none                       null      local

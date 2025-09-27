@@ -1,0 +1,4 @@
+1.Do We need to add the capability to edit the product by the user
+2.Ask for the fields to edit in products and expected inputs
+3.relation between weight and quantity in stock
+4.if farmer deleted do we need to delete the product of that farmer ? 

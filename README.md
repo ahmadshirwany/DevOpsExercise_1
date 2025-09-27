@@ -4,7 +4,7 @@ This project demonstrates a simple microservices system using Docker Compose.
 
 ## Services
 
-- **service1**: Python FastAPI app (port 8001) — main status API, talks to service2 and storage.
+- **service1**: Python FastAPI app (port 8199) — main status API, talks to service2 and storage.
 - **service2**: Node.js Express app (port 8002) — provides system status, logs to storage.
 - **storage**: Python Flask app (port 8003) — receives and serves logs.
 

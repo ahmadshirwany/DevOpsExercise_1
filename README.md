@@ -49,7 +49,7 @@ docker-compose down -v
 No environment variables are required for basic operation.
 
 ### Port Configuration
-- Service1: `8001:8001` (host:container)
+- Service1: `8199:8199` (host:container)
 - Service2: `8002` (internal only)
 - Storage: `8003` (internal only)
 
